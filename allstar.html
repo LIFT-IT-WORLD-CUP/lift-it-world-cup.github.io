@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIFT IT — Can you go unbeaten?</title>
+<title>LIFT IT — All-Star Final</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+
 /* ============================================================ tokens */
 :root{
   --pitch:#07090d; --surface:#10141c; --surface-2:#161b26;
@@ -295,83 +296,97 @@ table.grp tr.q3 td:first-child::after{content:" ●";color:var(--blue);font-size
 .row-btns .cta{flex:1;font-size:16px;padding:16px}
 .ghost{flex:1;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:var(--radius);
   padding:16px;cursor:pointer;font-family:var(--display);font-size:16px;letter-spacing:.13em;text-transform:uppercase}
+
+/* ===== All-Star Final additions ===== */
+.as-topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line)}
+.as-proto{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:5px 12px}
+.as-tierpick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0 4px}
+.as-tier{cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:12px;padding:14px 8px;text-align:center;transition:.15s}
+.as-tier .tn{font-family:var(--display);font-size:17px;text-transform:uppercase;letter-spacing:.04em}
+.as-tier .ts{font-size:11px;color:var(--muted);margin-top:3px}
+.as-tier.on{background:var(--surface-2)}
+.as-blurb{font-size:13px;color:var(--muted);text-align:center;line-height:1.5;margin-top:12px;min-height:38px}
+.as-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin:6px 0 16px}
+.as-side{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.as-side.you{border-color:var(--gold)}
+.as-side .nm{font-family:var(--display);font-size:19px;text-transform:uppercase;line-height:1.05}
+.as-side .str{font-size:12px;color:var(--muted);margin-top:6px}.as-side .str b{color:var(--gold);font-size:17px}
+.as-side.opp .nm{color:var(--plat)}.as-side.opp .str b{color:var(--plat)}
+.as-vs .x{display:flex;align-items:center;font-family:var(--display);color:var(--muted);font-size:20px}
+.as-xi{display:flex;flex-direction:column;gap:5px}
+.as-xi .p{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;padding:7px 11px;background:var(--surface-2);border-radius:8px}
+.as-xi .p .lab{font-weight:700;color:var(--muted);min-width:32px}
+.as-xi .p .nm{flex:1;text-align:left;font-weight:700;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.as-xi .p .era{font-size:10px;color:var(--muted);font-weight:700;margin-right:4px}
+.as-xi .p .rt{font-weight:700;font-variant-numeric:tabular-nums;min-width:22px;text-align:right}
+.as-predict{display:flex;align-items:center;justify-content:center;gap:14px;margin:6px 0 2px}
+.as-sb{display:flex;flex-direction:column;align-items:center;gap:6px}
+.as-sb .who{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);max-width:120px;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.as-sb .who.you{color:var(--gold)}
+.as-step{display:flex;align-items:center;gap:8px}
+.as-step button{width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:21px;font-weight:700;cursor:pointer}
+.as-step button:hover{border-color:var(--blue)}
+.as-step .val{font-family:var(--display);font-size:42px;min-width:48px;text-align:center;color:var(--gold)}
+.as-predict .dash{font-family:var(--display);font-size:34px;color:var(--muted);align-self:flex-end;padding-bottom:8px}
+.as-matchsim{text-align:center;padding:14px 0}
+.as-bigscore{font-family:var(--display);font-size:clamp(46px,12vw,78px);line-height:1;letter-spacing:.04em}
+.as-bigscore .h{color:var(--gold)}.as-bigscore .sep{color:var(--muted);margin:0 10px}
+.as-teamsline{display:flex;justify-content:center;gap:14px;font-weight:700;font-size:14px;margin-top:8px}.as-teamsline .you{color:var(--gold)}
+.as-scorers{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.6}.as-scorers b{color:#c8cfda}
+.as-grade{display:none;text-align:center;border-radius:18px;padding:26px 22px;margin:16px 0}
+.as-grade.show{display:block}
+.as-grade .tier{font-family:var(--display);font-size:clamp(28px,7vw,42px);text-transform:uppercase}
+.as-grade.perfect{background:linear-gradient(160deg,rgba(232,181,58,.16),rgba(232,181,58,.03));border:1px solid var(--gold)}
+.as-grade.perfect .tier{color:var(--gold)}
+.as-grade.gd{background:linear-gradient(160deg,rgba(31,127,209,.14),rgba(31,127,209,.03));border:1px solid var(--blue)}
+.as-grade.gd .tier{color:var(--blue)}
+.as-grade.result{background:linear-gradient(160deg,rgba(30,162,79,.12),rgba(30,162,79,.03));border:1px solid var(--green)}
+.as-grade.result .tier{color:var(--green)}
+.as-grade.miss{background:var(--surface);border:1px solid var(--line)}.as-grade.miss .tier{color:var(--text)}
+.as-grade .pl-line{color:var(--muted);font-size:14px;margin-top:8px}.as-grade .pl-line b{color:var(--text)}
+.as-hint{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+.as-home{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.as-home:hover{color:var(--text);border-color:var(--blue)}
 </style>
 </head>
 <body>
-
-<!-- ===================================================== TOP BAR -->
-<div class="topbar">
-  <div class="mark" id="homeLink">Lift <span>It</span></div>
-  <div class="strap" id="strap">Can you go unbeaten?</div>
-  <button class="pill" onclick="location.reload()">↻ Restart</button>
+<div class="as-topbar">
+  <div class="mark" style="font-family:var(--display);font-size:22px;text-transform:uppercase">Lift <span style="background:linear-gradient(135deg,var(--red),var(--blue) 55%,var(--green));-webkit-background-clip:text;background-clip:text;color:transparent">It</span></div>
+  <div class="as-proto">All-Star Final</div>
 </div>
 
-<!-- ===================================================== HOME -->
-<section class="screen show" id="homeScreen">
-  <div class="pitch-lines" aria-hidden="true"></div>
-  <main class="wrap">
-    <header class="hero">
-      <svg class="ball" viewBox="0 0 120 120" role="img" aria-label="LIFT IT ball mark">
-        <defs><clipPath id="ballClip"><circle cx="60" cy="60" r="56"/></clipPath></defs>
-        <circle cx="60" cy="60" r="56" fill="#fdfdfc"/>
-        <g clip-path="url(#ballClip)">
-          <path d="M-6 78 C 24 50, 44 96, 70 70 C 86 54, 102 70, 128 56 L 128 128 L -6 128 Z" fill="#1ea24f"/>
-          <path d="M-10 30 C 18 56, 40 8, 66 30 C 84 45, 70 6, 130 14 L 130 -10 L -10 -10 Z" fill="#d62f3e"/>
-          <path d="M46 44 L 78 30 L 92 62 L 60 78 Z" fill="#1f7fd1"/>
-          <path d="M14 58 L 34 50 L 40 70 L 20 78 Z" fill="#1f7fd1" opacity=".85"/>
-        </g>
-        <circle cx="60" cy="60" r="56" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2"/>
-      </svg>
-      <h1 class="wordmark">Lift <span class="it">It</span></h1>
-      <div class="tristripe" aria-hidden="true"></div>
-      <p class="sub">Build the ultimate <em>tournament XI</em></p>
-      <p class="dare">Can you go unbeaten?</p>
-    </header>
+<!-- ===== INTRO ===== -->
+<section class="screen show" id="introScreen">
+  <div class="wrap" style="max-width:680px;margin:0 auto;padding:40px 20px 60px">
+    <h1 class="title" style="text-align:center">All-Star <span class="grad" style="color:var(--gold);-webkit-text-fill-color:var(--gold)">Final</span></h1>
+    <div class="tristripe" style="margin:14px auto 18px"></div>
+    <p class="tagline" style="text-align:center;color:var(--muted);max-width:460px;margin:0 auto 30px;line-height:1.55">
+      Spin your XI exactly like the main game — legends from any tournament can land. Then face a team of all-stars, call the score, and kick off. One match. One shot.</p>
 
-    <label class="field-label" for="teamName">Your team</label>
-    <input class="name-input" id="teamName" type="text" maxlength="28" placeholder="Name your team (optional)" autocomplete="off">
-
-    <p class="field-label" id="ratingsLabel">Show ratings</p>
-    <div class="toggle-row">
-      <span id="offLbl">Off</span>
-      <button class="switch" id="ratingsSwitch" role="switch" aria-checked="true" aria-labelledby="ratingsLabel"></button>
-      <span id="onLbl" class="active">On</span>
+    <div class="field">
+      <label class="field-label" for="asTeamName">Your team name</label>
+      <input id="asTeamName" class="text-input" type="text" maxlength="24" placeholder="e.g. The Dream XI" autocomplete="off">
     </div>
-    <p class="toggle-note" id="ratingsNote">Player ratings visible</p>
 
-    <p class="field-label">Tournaments in the spin pool</p>
-    <div class="stickers" id="stickers" role="group"></div>
-    <div class="pool-chip">👤 <b id="poolCount">0</b>&nbsp;players in pool</div>
+    <div class="field">
+      <p class="field-label">Formation</p>
+      <div class="formations" id="asFormPick" role="group"></div>
+    </div>
 
-    <p class="field-label">Formation</p>
-    <div class="formations" id="formations" role="group"></div>
-
-    <button class="cta" id="startBtn" style="margin-top:40px">🌍&nbsp; Spin the globe</button>
-
-    <a href="allstar.html" class="cta" id="allstarHomeBtn" style="display:block;text-align:center;text-decoration:none;margin-top:12px;background:linear-gradient(100deg,#1a1f2e,#222a3a);border:1px solid var(--gold);color:var(--gold)">⚡&nbsp; All-Star Final</a>
-
-    <a href="top5.html" class="cta" id="top5HomeBtn" style="display:block;text-align:center;text-decoration:none;margin-top:12px;background:linear-gradient(100deg,#1a1f2e,#222a3a);border:1px solid var(--gold);color:var(--gold)">🏆&nbsp; Top 5</a>
-
-    <section class="panel" style="margin-top:48px">
-      <h3>How it works</h3>
-      <div class="steps">
-        <div class="step"><div class="step-n">1</div><p><b>Spin</b> the globe to land a random nation and tournament — Brazil '70, Argentina '86, France '98…</p></div>
-        <div class="step"><div class="step-n">2</div><p><b>Pick</b> one player from that squad to fill a position. Eleven spins. Eleven calls. No subs, no going back.</p></div>
-        <div class="step"><div class="step-n">3</div><p><b>Choose your campaign</b> — any World Cup, played in its authentic format against its real field.</p></div>
+    <div class="field">
+      <p class="field-label" id="asRatingsLabel">Show ratings</p>
+      <div class="toggle-row">
+        <span id="asOffLbl">Off</span>
+        <button class="switch" id="asRatingsSwitch" role="switch" aria-checked="true" aria-labelledby="asRatingsLabel"></button>
+        <span id="asOnLbl" class="active">On</span>
       </div>
-      <div class="challenge">
-        <div class="c-label">The challenge</div>
-        <div class="c-text">Win every match. Lift it. 🏆</div>
-      </div>
-    </section>
+      <p class="toggle-note" id="asRatingsNote">Player ratings visible</p>
+    </div>
 
-    <footer>
-      LIFT IT is a fan-made game. Not affiliated with FIFA or any national association.<br>
-      Player names are used in a historical, editorial context.
-    </footer>
-  </main>
+    <button class="cta" id="asStartSpin" style="margin-top:14px">Start spinning →</button>
+    <div style="text-align:center;margin-top:18px"><a class="as-home" href="index.html">← Back to LIFT IT</a></div>
+  </div>
 </section>
-
 <!-- ===================================================== SPIN -->
 <section class="screen" id="spinScreen">
   <div class="game">
@@ -421,76 +436,84 @@ table.grp tr.q3 td:first-child::after{content:" ●";color:var(--blue);font-size
       <div class="complete" id="complete">
         <h2>Your XI is set</h2>
         <p id="completeText"></p>
-        <button class="gold-btn" id="campaignBtn">Choose your campaign →</button>
+        <button class="gold-btn" id="asToTier">Auto-generate the All-Stars →</button>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ===================================================== CAMPAIGN -->
-<section class="screen" id="campPickScreen">
-  <div class="wrap wide">
-    <div class="team-chip" id="teamChip"></div>
-    <h1 class="screen-title">Choose your campaign</h1>
-    <p class="screen-sub">Every edition plays out in its authentic format, against its real field.<br>Win every match and lift it.</p>
-    <div class="camps" id="camps"></div>
+<!-- ===== TIER PICK ===== -->
+<section class="screen" id="tierScreen">
+  <div class="wrap" style="max-width:680px;margin:0 auto;padding:34px 20px 60px">
+    <h1 class="title" style="text-align:center;font-size:clamp(28px,6vw,40px)">Choose your <span style="color:var(--gold)">opponent</span></h1>
+    <div class="tristripe" style="margin:12px auto 8px"></div>
+    <p class="tagline" style="text-align:center;color:var(--muted);margin:0 auto 22px">How fearsome should the All-Stars be?</p>
+    <div class="as-tierpick" id="asTierPick"></div>
+    <p class="as-blurb" id="asTierBlurb"></p>
+    <button class="cta" id="asGenerate" style="margin-top:16px">⚡ Generate the All-Stars →</button>
+    <button class="ghost-btn" id="asBackToSpin" style="width:100%;margin-top:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:14px;padding:14px;cursor:pointer;font-family:var(--display);font-size:15px;letter-spacing:.1em;text-transform:uppercase">← Re-spin my XI</button>
   </div>
 </section>
 
-<section class="screen" id="groupScreen">
-  <div class="wrap wide">
-    <h1 class="screen-title" id="grpTitle"></h1>
-    <p class="screen-sub" id="grpSub"></p>
-    <div class="note" id="drawNote"></div>
-    <div class="panel"><h3 id="mdTitle">Fixtures</h3><div id="mdMatches"></div><div class="scorers" id="mdScorers"></div></div>
-    <div class="panel"><h3>Group table</h3><div id="grpTable"></div></div>
-    <button class="cta" id="grpBtn">Play matchday 1</button>
-  </div>
-</section>
-
-<section class="screen" id="koScreen">
-  <div class="wrap wide">
-    <h1 class="screen-title">The knockouts</h1>
-    <p class="screen-sub" id="koSub"></p>
-    <div class="panel"><h3 id="koTitle"></h3><div id="koMatch"></div><div class="scorers" id="koScorers"></div></div>
-    <div class="panel"><h3>Bracket</h3><div class="bracket" id="bracket"></div></div>
-    <button class="cta" id="koBtn">Play</button>
-  </div>
-</section>
-
-<section class="screen" id="endScreen">
-  <div class="wrap wide">
-    <div class="ending" id="endingBox">
-      <div class="trophy" id="endIcon"></div>
-      <h2 id="endTitle"></h2>
-      <p class="e-sub" id="endSub"></p>
-      <div class="awards" id="awards"></div>
+<!-- ===== MATCHUP + PREDICT ===== -->
+<section class="screen" id="matchupScreen">
+  <div class="wrap" style="max-width:680px;margin:0 auto;padding:30px 20px 60px">
+    <h1 class="title" style="text-align:center;font-size:clamp(28px,6vw,40px)">The Final</h1>
+    <div class="tristripe" style="margin:12px auto 14px"></div>
+    <div class="as-vs">
+      <div class="as-side you"><div class="nm" id="asYouName">Your XI</div><div class="str">strength <b id="asYouStr">—</b></div></div>
+      <div class="x">VS</div>
+      <div class="as-side opp"><div class="nm" id="asOppName">All-Stars</div><div class="str">strength <b id="asOppStr">—</b></div></div>
     </div>
-    <div class="row-btns">
-      <button class="ghost" id="shareBtn">Copy result</button>
-      <button class="ghost" id="sameXiBtn">Same XI, new campaign</button>
-      <button class="cta" onclick="location.reload()">New XI</button>
+    <div class="panel" style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px">
+      <p class="field-label" style="text-align:center;color:var(--blue);margin-bottom:12px">The All-Star XI</p>
+      <div class="as-xi" id="asOppXi"></div>
     </div>
-    <button class="cta" id="toAllStarBtn" style="margin-top:12px;width:100%;background:linear-gradient(100deg,#1a1f2e,#222a3a);border:1px solid var(--gold);color:var(--gold)">⚡ Take this XI to the All-Star Final →</button>
+    <div class="panel" style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px">
+      <p class="field-label" style="text-align:center;color:var(--blue);margin-bottom:6px">Predict the final score</p>
+      <div class="as-predict">
+        <div class="as-sb">
+          <div class="who you" id="asPredYouWho">Your XI</div>
+          <div class="as-step"><button data-d="-1" data-s="you">−</button><div class="val" id="asPredYou">1</div><button data-d="1" data-s="you">+</button></div>
+        </div>
+        <div class="dash">–</div>
+        <div class="as-sb">
+          <div class="who">All-Stars</div>
+          <div class="as-step"><button data-d="-1" data-s="opp">−</button><div class="val" id="asPredOpp">1</div><button data-d="1" data-s="opp">+</button></div>
+        </div>
+      </div>
+      <p class="as-hint" id="asOdds"></p>
+    </div>
+    <button class="cta" id="asKickoff">⚽ Kick off</button>
+    <button class="ghost-btn" id="asReroll" style="width:100%;margin-top:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:14px;padding:14px;cursor:pointer;font-family:var(--display);font-size:15px;letter-spacing:.1em;text-transform:uppercase">↻ Different tier</button>
   </div>
 </section>
 
-<div class="toast" id="toast" role="status"></div>
+<!-- ===== RESULT ===== -->
+<section class="screen" id="resultScreen">
+  <div class="wrap" style="max-width:680px;margin:0 auto;padding:30px 20px 60px">
+    <h1 class="title" id="asResTitle" style="text-align:center;font-size:clamp(26px,5.5vw,38px)">Full time</h1>
+    <div class="tristripe" style="margin:12px auto 14px"></div>
+    <div class="panel" style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px">
+      <div class="as-matchsim">
+        <div class="as-bigscore"><span class="h" id="asScH">0</span><span class="sep">–</span><span id="asScA">0</span></div>
+        <div class="as-teamsline"><span class="you" id="asResYouName">Your XI</span><span>vs</span><span>All-Stars</span></div>
+        <div class="as-scorers" id="asScorers"></div>
+      </div>
+    </div>
+    <div class="as-grade" id="asGrade">
+      <div class="tier" id="asGradeTier"></div>
+      <div class="pl-line" id="asGradeLine"></div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:4px">
+      <button class="ghost-btn" id="asShare" style="flex:1;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:14px;padding:15px;cursor:pointer;font-family:var(--display);font-size:15px;letter-spacing:.1em;text-transform:uppercase">Copy result</button>
+      <button class="cta" id="asAgain" style="flex:1">Play again</button>
+    </div>
+    <div style="text-align:center;margin-top:16px"><a class="as-home" href="index.html">← Back to LIFT IT</a></div>
+  </div>
+</section>
 
+<div class="toast" id="asToast" role="status" style="position:fixed;left:50%;bottom:24px;transform:translate(-50%,80px);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:13px 22px;font-size:14px;opacity:0;transition:all .25s;pointer-events:none;z-index:30"></div>
 <script>
-(function(){
-"use strict";
-const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
-function show(id){ $$(".screen").forEach(s=>s.classList.remove("show")); $("#"+id).classList.add("show"); window.scrollTo(0,0); }
-const toastEl=$("#toast"); let toastTimer=null;
-function toast(m){ toastEl.textContent=m; toastEl.classList.add("show");
-  clearTimeout(toastTimer); toastTimer=setTimeout(()=>toastEl.classList.remove("show"),2800); }
-function tierClass(r){ if(r>=97)return"t97"; if(r>=93)return"t93"; if(r>=89)return"t89";
-  if(r>=85)return"t85"; if(r>=80)return"t80"; return"t75"; }
-
-/* =========================================================================
-   DATA — squad packs (player-level spin pools). 1966 built; more to follow.
-   ========================================================================= */
 const LIFTIT_1966={tournament:"1966",host:"England",squads:[
  {nation:"England",code:"ENG",finish:"Champions",players:[
   {name:"Gordon Banks",pos:"GK",alt:[],rtg:91,note:"Conceded once before the semi-final; the world's best keeper in waiting."},
@@ -1260,33 +1283,6 @@ const LIFTIT_2006={tournament:"2006",host:"Germany",squads:[
   {name:"Matthew Amoah",pos:"ST",alt:["RW"],rtg:75,club:"Borussia Dortmund",note:"Mobile, hard-working forward."}]}
 ]};
 const LIFTIT_PACKS=[LIFTIT_1966, LIFTIT_1998, LIFTIT_2006, LIFTIT_2014, LIFTIT_2022, LIFTIT_2026];
-
-/* All eight editions: campaign metadata + tournament fields (team-level ratings) */
-const CAMPAIGNS=[
- {year:"1966",host:"England",fmt:"wc16",pts:2,dare:"6 wins to lift it",diff:"easy",
-  teams:[["England",88],["West Germany",87],["Brazil",86],["Portugal",86],["Soviet Union",85],["Hungary",84],["Argentina",83],["Italy",82],["Uruguay",82],["Spain",81],["France",79],["Chile",78],["Bulgaria",77],["Mexico",76],["Switzerland",75],["North Korea",74]]},
- {year:"1970",host:"Mexico",fmt:"wc16",pts:2,dare:"6 wins to lift it",diff:"easy",
-  teams:[["Brazil",95],["West Germany",89],["Italy",88],["England",87],["Soviet Union",84],["Uruguay",83],["Peru",82],["Mexico",80],["Belgium",78],["Sweden",78],["Romania",78],["Czechoslovakia",77],["Bulgaria",76],["Israel",73],["Morocco",72],["El Salvador",70]]},
- {year:"1986",host:"Mexico",fmt:"wc24",pts:2,dare:"7 wins to lift it",diff:"mid",
-  teams:[["Argentina",92],["France",89],["West Germany",88],["Brazil",88],["Denmark",86],["England",85],["Spain",85],["Soviet Union",85],["Belgium",84],["Italy",84],["Mexico",82],["Uruguay",81],["Poland",80],["Morocco",80],["Portugal",79],["Hungary",78],["Paraguay",78],["Scotland",77],["Bulgaria",77],["Northern Ireland",75],["Algeria",75],["South Korea",73],["Iraq",71],["Canada",70]]},
- {year:"1998",host:"France",fmt:"wc32",pts:3,dare:"7 wins to lift it",diff:"mid",
-  teams:[["Brazil",92],["France",91],["Netherlands",89],["Italy",88],["Argentina",88],["Croatia",87],["Germany",86],["England",86],["Spain",86],["Romania",84],["Denmark",84],["Yugoslavia",84],["Nigeria",82],["Mexico",81],["Paraguay",81],["Norway",80],["Chile",80],["Colombia",80],["Belgium",79],["Bulgaria",79],["Morocco",79],["Cameroon",77],["Scotland",76],["Austria",76],["Iran",74],["USA",74],["South Africa",74],["Saudi Arabia",73],["Japan",73],["Tunisia",73],["South Korea",73],["Jamaica",71]]},
- {year:"2006",host:"Germany",fmt:"wc32",pts:3,dare:"7 wins to lift it",diff:"mid",
-  teams:[["Italy",91],["Brazil",90],["France",90],["Germany",89],["Argentina",89],["Portugal",87],["England",87],["Spain",86],["Netherlands",85],["Czech Republic",83],["Ukraine",81],["Sweden",81],["Mexico",81],["Croatia",81],["Switzerland",80],["Ghana",79],["Côte d'Ivoire",79],["Ecuador",78],["Australia",78],["Serbia & Montenegro",78],["Poland",77],["Paraguay",77],["South Korea",77],["USA",77],["Japan",76],["Tunisia",74],["Iran",74],["Costa Rica",73],["Saudi Arabia",71],["Angola",71],["Togo",69],["Trinidad & Tobago",68]]},
- {year:"2014",host:"Brazil",fmt:"wc32",pts:3,dare:"7 wins to lift it",diff:"mid",
-  teams:[["Germany",92],["Argentina",90],["Netherlands",89],["Brazil",89],["Spain",87],["France",87],["Colombia",86],["Belgium",86],["Chile",84],["Uruguay",84],["Portugal",84],["Italy",83],["Mexico",82],["Switzerland",81],["Croatia",81],["England",81],["Greece",79],["USA",79],["Côte d'Ivoire",79],["Russia",78],["Bosnia & Herzegovina",78],["Algeria",78],["Ecuador",77],["Ghana",77],["Nigeria",77],["Japan",76],["Costa Rica",76],["Iran",75],["South Korea",74],["Australia",73],["Cameroon",72],["Honduras",71]]},
- {year:"2022",host:"Qatar",fmt:"wc32",pts:3,dare:"7 wins to lift it",diff:"mid",
-  teams:[["Argentina",91],["France",91],["Brazil",90],["England",88],["Netherlands",87],["Portugal",87],["Croatia",87],["Spain",86],["Morocco",86],["Germany",85],["Belgium",84],["Uruguay",82],["Denmark",81],["Switzerland",81],["Senegal",81],["Japan",80],["USA",80],["Poland",79],["South Korea",79],["Mexico",79],["Serbia",78],["Ecuador",78],["Australia",77],["Wales",76],["Iran",76],["Cameroon",76],["Ghana",76],["Tunisia",75],["Canada",75],["Saudi Arabia",73],["Costa Rica",72],["Qatar",70]]},
- {year:"2026",host:"USA · Mexico · Canada",fmt:"wc48",pts:3,dare:"8 wins to lift it",diff:"hard",
-  teams:[["Spain",92],["France",91],["Argentina",91],["England",90],["Brazil",89],["Portugal",89],["Germany",87],["Netherlands",87],["Norway",85],["Morocco",85],["Croatia",84],["Colombia",84],["Belgium",84],["Japan",83],["Uruguay",83],["Türkiye",81],["Austria",81],["Switzerland",81],["USA",81],["Mexico",81],["Ecuador",81],["Senegal",81],["South Korea",80],["Algeria",79],["Egypt",79],["Côte d'Ivoire",79],["Sweden",79],["Scotland",78],["Czechia",78],["Iran",78],["Canada",78],["Paraguay",78],["Bosnia & Herzegovina",77],["Australia",77],["Ghana",77],["Tunisia",76],["South Africa",75],["Saudi Arabia",75],["Panama",75],["Uzbekistan",74],["DR Congo",74],["Qatar",73],["Cape Verde",72],["Jordan",72],["New Zealand",72],["Iraq",72],["Haiti",70],["Curaçao",70]]}
-];
-const FMT_INFO={
-  wc16:"16 teams · group of 4 → QF → SF → Final",
-  wc24:"24 teams · group of 4 (+ best thirds) → R16 → QF → SF → Final",
-  wc32:"32 teams · group of 4 → R16 → QF → SF → Final",
-  wc48:"48 teams · group of 4 (+ best thirds) → R32 → R16 → QF → SF → Final"
-};
-
 const FORMATIONS={
  "4-3-3":[{id:"LW",lab:"LW",acc:["LW"],x:18,y:16,g:"ATT"},{id:"ST",lab:"ST",acc:["ST"],x:50,y:11,g:"ATT"},
   {id:"RW",lab:"RW",acc:["RW"],x:82,y:16,g:"ATT"},{id:"CM1",lab:"CM",acc:["CM","DM","AM"],x:27,y:42,g:"MID"},
@@ -1313,80 +1309,69 @@ const FORMATIONS={
   {id:"CB2",lab:"CB",acc:["CB"],x:62,y:75,g:"DEF"},{id:"RB",lab:"RB",acc:["RB"],x:88,y:71,g:"DEF"},
   {id:"GK",lab:"GK",acc:["GK"],x:50,y:91,g:"DEF"}]
 };
+/* packs+formations embedded above */
 
-/* =========================================================================
-   GLOBAL STATE
-   ========================================================================= */
-const SETUP={teamName:"",showRatings:true,tournaments:["1966"],formation:"4-3-3"};
-let TEAM=null;   /* set when XI complete: {teamName,formation,strength,xi[]} */
+/* ============ helpers & state ============ */
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+function show(id){ $$(".screen").forEach(s=>s.classList.remove("show")); $("#"+id).classList.add("show"); window.scrollTo(0,0); }
+const _toast=$("#asToast");let _tt=null;
+function toast(m){_toast.textContent=m;_toast.classList.add("show");clearTimeout(_tt);_tt=setTimeout(()=>_toast.classList.remove("show"),2600);}
 
-/* =========================================================================
-   HOME
-   ========================================================================= */
-(function home(){
-  const sw=$("#ratingsSwitch");
-  sw.addEventListener("click",()=>{
-    SETUP.showRatings=!SETUP.showRatings;
-    sw.setAttribute("aria-checked",String(SETUP.showRatings));
-    $("#onLbl").classList.toggle("active",SETUP.showRatings);
-    $("#offLbl").classList.toggle("active",!SETUP.showRatings);
-    $("#ratingsNote").textContent=SETUP.showRatings?"Player ratings visible":"Ratings hidden — pick on instinct";
-  });
+/* SETUP mirrors the main game; tournaments = ALL packs so the spin is cross-era */
+const SETUP={teamName:"",showRatings:true,tournaments:LIFTIT_PACKS.map(p=>p.tournament),formation:"4-3-3"};
+let TEAM=null;
 
-  const HOSTS={ "1966":"England","1970":"Mexico","1986":"Mexico","1998":"France",
-                "2006":"Germany","2014":"Brazil","2022":"Qatar","2026":"USA·MEX·CAN" };
-  const stickEl=$("#stickers");
-  CAMPAIGNS.forEach(c=>{
-    const pack=LIFTIT_PACKS.find(p=>p.tournament===c.year);
-    const b=document.createElement("button");
-    b.className="sticker"+(pack?" on":"");
-    b.disabled=!pack;
-    b.dataset.year=c.year;
-    b.dataset.pool=pack? pack.squads.reduce((a,s)=>a+s.players.length,0) : 0;
-    b.innerHTML=(pack?'<span class="tick">✓</span>':'<span class="soon">Soon</span>')+
-      '<span class="yr">\''+c.year.slice(2)+'</span><span class="host">'+HOSTS[c.year]+'</span>';
-    if(pack) b.addEventListener("click",()=>{ b.classList.toggle("on"); refreshPool(); });
-    stickEl.appendChild(b);
-  });
-  function refreshPool(){
-    const on=$$(".sticker.on");
-    SETUP.tournaments=on.map(s=>s.dataset.year);
-    $("#poolCount").textContent=on.reduce((a,s)=>a+Number(s.dataset.pool),0);
-  }
-  refreshPool();
+/* Cross-era legend pool for opposition generation (dedupe by name, keep highest rtg) */
+const _ALL=[];LIFTIT_PACKS.forEach(p=>p.squads.forEach(s=>s.players.forEach(pl=>_ALL.push({n:pl.name,p:pl.pos,a:pl.alt||[],r:pl.rtg,e:p.tournament,t:s.nation,c:pl.club||""}))));
+const _BEST={};_ALL.forEach(p=>{if(!_BEST[p.n]||p.r>_BEST[p.n].r)_BEST[p.n]=p;});
+const LEGENDS=Object.values(_BEST);
 
+const TIERS={
+  contender:{name:"Contender",lo:79,hi:88,col:"var(--green)",blurb:"Great internationals and stars. A fair fight — you can be favourite."},
+  legends:{name:"Legends",lo:85,hi:93,col:"var(--blue)",blurb:"The genuine greats. A worthy final — roughly matched or slight underdog."},
+  impossible:{name:"Impossible",lo:90,hi:99,col:"var(--gold)",blurb:"The pantheon: Pelé, Messi, Mbappé. You're meant to lose. A draw is heroic."}
+};
+const AS={tier:"legends",oppXi:[],oppStr:0,pred:{you:1,opp:1}};
+
+/* slot acceptance map for opposition fitting (mirror of FORMATIONS acc) */
+function fitsSlot(pl,acc){const can=[pl.p].concat(pl.a||[]);return acc.some(a=>can.includes(a));}
+function tierClass(r){ if(r>=97)return"t97"; if(r>=93)return"t93"; if(r>=89)return"t89";
+  if(r>=85)return"t85"; if(r>=80)return"t80"; return"t75"; }
+
+/* ============ INTRO screen ============ */
+(function(){
   const MINI={ "4-3-3":[[10,10],[27,8],[44,10],[13,26],[27,24],[41,26],[8,42],[20,44],[34,44],[46,42],[27,58]],
     "4-4-2":[[18,9],[36,9],[8,26],[20,27],[34,27],[46,26],[8,42],[20,44],[34,44],[46,42],[27,58]],
     "3-5-2":[[18,9],[36,9],[6,25],[17,27],[27,28],[37,27],[48,25],[13,44],[27,45],[41,44],[27,58]],
     "4-2-3-1":[[27,7],[11,20],[27,21],[43,20],[19,34],[35,34],[8,47],[20,48],[34,48],[46,47],[27,59]] };
-  const formEl=$("#formations");
+  const formEl=$("#asFormPick");
   Object.keys(FORMATIONS).forEach((f,i)=>{
     const b=document.createElement("button");
     b.className="formation"+(i===0?" on":"");
     b.innerHTML='<svg viewBox="0 0 54 64" aria-hidden="true">'+
       MINI[f].map((d,j)=>'<circle class="dot'+(j===MINI[f].length-1?' gk':'')+'" cx="'+d[0]+'" cy="'+d[1]+'" r="4"/>').join("")+
       '</svg><span class="fname">'+f+'</span>';
-    b.addEventListener("click",()=>{
-      $$(".formation").forEach(x=>x.classList.remove("on"));
-      b.classList.add("on"); SETUP.formation=f;
-    });
+    b.addEventListener("click",()=>{ $$("#asFormPick .formation").forEach(x=>x.classList.remove("on")); b.classList.add("on"); SETUP.formation=f; });
     formEl.appendChild(b);
   });
-
-  $("#startBtn").addEventListener("click",()=>{
-    if(SETUP.tournaments.length===0){ toast("Pick at least one tournament first."); return; }
-    SETUP.teamName=$("#teamName").value.trim();
-    initSpin();
-    show("spinScreen");
+  const asSw=$("#asRatingsSwitch");
+  asSw.addEventListener("click",()=>{
+    SETUP.showRatings=!SETUP.showRatings;
+    asSw.setAttribute("aria-checked",String(SETUP.showRatings));
+    $("#asOnLbl").classList.toggle("active",SETUP.showRatings);
+    $("#asOffLbl").classList.toggle("active",!SETUP.showRatings);
+    $("#asRatingsNote").textContent=SETUP.showRatings?"Player ratings visible":"Ratings hidden — pick on instinct";
+  });
+  $("#asStartSpin").addEventListener("click",()=>{
+    SETUP.teamName=$("#asTeamName").value.trim();
+    initSpin(); show("spinScreen");
   });
 })();
 
-/* =========================================================================
-   SPIN
-   ========================================================================= */
+/* ============ SPIN (lifted from main game) ============ */
 let SPIN=null;
 function initSpin(){
-  $("#strap").textContent=(SETUP.teamName||"Your XI")+" — spin for a squad, pick your best player";
+  var _strap=$("#strap"); if(_strap)_strap.textContent=(SETUP.teamName||"Your XI")+" — spin for a squad, pick your best player";
   let packs=LIFTIT_PACKS.filter(p=>SETUP.tournaments.includes(p.tournament));
   if(!packs.length) packs=LIFTIT_PACKS.slice();
   SPIN={ packs, slots:FORMATIONS[SETUP.formation].map(s=>Object.assign({},s,{player:null,nation:null})),
@@ -1542,278 +1527,168 @@ function finishSpin(){
   TEAM={ teamName:SETUP.teamName||"Your XI", formation:SETUP.formation, strength:total,
     xi:SPIN.slots.map(s=>({slot:s.id,lab:s.lab,group:s.g,nation:s.nation,name:s.player.name,rtg:s.player.rtg})) };
 }
-$("#campaignBtn").addEventListener("click",()=>{ initCampPick(); show("campPickScreen"); });
+$("#asToTier").addEventListener("click",()=>{ enterTierScreen(); });
 
-/* =========================================================================
-   CAMPAIGN
-   ========================================================================= */
-const C={};
-function initCampPick(){
-  $("#strap").textContent=TEAM.teamName+" — choose your campaign";
-  $("#teamChip").innerHTML="⚽ <b>"+TEAM.teamName+"</b> · "+TEAM.formation+" · strength <span class='str'>"+
-    TEAM.strength+"</span> · star: <b>"+TEAM.xi.reduce((a,b)=>a.rtg>b.rtg?a:b).name+"</b>";
-  const el=$("#camps"); el.innerHTML="";
-  CAMPAIGNS.forEach(c=>{
+
+/* ============ ALL-STAR FLOW ============ */
+function teamStrength(xi){ return Math.round(xi.reduce((a,p)=>a+p.r,0)/xi.length); }
+
+/* widen-friendly fit using the formation slot's acc list */
+function buildAllStars(tierKey){
+  const T=TIERS[tierKey];
+  const slots=FORMATIONS[SETUP.formation];
+  const used=new Set(TEAM?TEAM.xi.map(p=>p.name):[]); // don't field your own players
+  const xi=[];
+  slots.forEach(slot=>{
+    let cands=LEGENDS.filter(p=>fitsSlot(p,slot.acc)&&!used.has(p.n)&&p.r>=T.lo&&p.r<=T.hi);
+    if(cands.length<2){
+      const mid=(T.lo+T.hi)/2;
+      cands=LEGENDS.filter(p=>fitsSlot(p,slot.acc)&&!used.has(p.n))
+        .sort((a,b)=>Math.abs(a.r-mid)-Math.abs(b.r-mid)).slice(0,6);
+    }
+    const pick=cands[Math.floor(Math.random()*cands.length)];
+    if(pick){ xi.push({lab:slot.lab,g:slot.g,player:pick}); used.add(pick.n); }
+  });
+  return xi;
+}
+
+function enterTierScreen(){
+  // ensure TEAM exists (it's set by finishSpin or by URL handoff)
+  if(!TEAM){ toast("Finish your XI first."); return; }
+  renderTierPick(); show("tierScreen");
+}
+
+function renderTierPick(){
+  const wrap=$("#asTierPick"); wrap.innerHTML="";
+  Object.entries(TIERS).forEach(([key,T])=>{
     const b=document.createElement("button");
-    b.className="camp";
-    b.innerHTML='<div class="c-top"><span class="c-year">'+c.year+'</span><span class="c-host">'+c.host+'</span></div>'+
-      '<div class="c-fmt">'+FMT_INFO[c.fmt]+'</div>'+
-      '<div class="c-dare '+c.diff+'">'+c.dare+'</div>';
-    b.addEventListener("click",()=>startCampaign(c));
-    el.appendChild(b);
+    b.className="as-tier"+(key===AS.tier?" on":"");
+    b.style.borderColor=key===AS.tier?T.col:"";
+    b.innerHTML='<div class="tn" style="color:'+(key===AS.tier?T.col:"var(--text)")+'">'+T.name+'</div><div class="ts">'+T.lo+'–'+T.hi+' rated</div>';
+    b.onclick=()=>{ AS.tier=key; renderTierPick(); $("#asTierBlurb").textContent=T.blurb; };
+    wrap.appendChild(b);
   });
-  C.scorerPool=TEAM.xi.map(p=>({name:p.name,
-    w: p.lab==="GK" ? .02 : Math.max(p.rtg-68,3)*(p.group==="ATT"?3:p.group==="MID"?1.6:.45)}));
+  $("#asTierBlurb").textContent=TIERS[AS.tier].blurb;
 }
-function pickScorer(){
-  const tot=C.scorerPool.reduce((a,p)=>a+p.w,0);
-  let r=Math.random()*tot;
-  for(const p of C.scorerPool){ r-=p.w; if(r<=0)return p.name; }
-  return C.scorerPool[0].name;
-}
-function poisson(l){ let L=Math.exp(-l),k=0,p=1; do{k++;p*=Math.random();}while(p>L); return k-1; }
-function lambdas(ra,rb){ const base=1.30,d=ra-rb;
-  return [Math.min(Math.max(base*Math.exp(d/14),.15),4.6),Math.min(Math.max(base*Math.exp(-d/14),.15),4.6)]; }
-function playMatch(ra,rb){ const [la,lb]=lambdas(ra,rb); return [poisson(la),poisson(lb)]; }
-function playKO(ra,rb){
-  let [a,b]=playMatch(ra,rb),et=false,pens=null;
-  if(a===b){ et=true; const [la,lb]=lambdas(ra,rb); a+=poisson(la/3); b+=poisson(lb/3); }
-  if(a===b){
-    const pA=Math.random()<(.5+(ra-rb)/400);
-    let win=4+(Math.random()<.35?1:0), lose=win-1-Math.floor(Math.random()*2);
-    pens=pA?[win,lose]:[lose,win];
-  }
-  return {a,b,et,pens};
-}
-function addGoals(n){ for(let i=0;i<n;i++){ const s=pickScorer(); C.scorers[s]=(C.scorers[s]||0)+1; } }
-function rec(a,b){ C.record.gf+=a; C.record.ga+=b;
-  if(a>b)C.record.w++; else if(a===b){C.record.d++;C.perfect=false;} else {C.record.l++;C.unbeaten=false;C.perfect=false;} }
-const GRP_SCHED=[[[0,1],[2,3]],[[0,2],[1,3]],[[0,3],[1,2]]];
-function sortGrp(g){ return g.slice().sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf||b.rtg-a.rtg); }
 
-function startCampaign(c){
-  Object.assign(C,{camp:c,groups:[],uGroup:0,md:0,record:{w:0,d:0,l:0,gf:0,ga:0},
-    scorers:{},perfect:true,unbeaten:true,koRounds:[],koNames:[],koIdx:0,uAlive:true,replaced:"",grpDone:false});
-  const field=c.teams.map(t=>({name:t[0],rtg:t[1],pts:0,gd:0,gf:0,you:false}));
-  for(let i=field.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [field[i],field[j]]=[field[j],field[i]]; }
-  const nG=field.length/4;
-  for(let g=0;g<nG;g++) C.groups.push(field.slice(g*4,g*4+4));
-  C.uGroup=Math.floor(Math.random()*nG);
-  const grp=C.groups[C.uGroup];
-  let low=0; grp.forEach((t,i)=>{ if(t.rtg<grp[low].rtg)low=i; });
-  C.replaced=grp[low].name;
-  grp[low]={name:TEAM.teamName,rtg:TEAM.strength,pts:0,gd:0,gf:0,you:true};
-  const L=String.fromCharCode(65+C.uGroup);
-  $("#strap").textContent=TEAM.teamName+" — "+c.year+" campaign";
-  $("#grpTitle").textContent=c.year+" · Group "+L;
-  $("#grpSub").textContent=c.host+" — "+FMT_INFO[c.fmt]+(c.pts===2?" · 2 points for a win (era rules)":"");
-  $("#drawNote").innerHTML="The draw: you take <b>"+C.replaced+"</b>'s place in <b>Group "+L+"</b>. Opponents: <b>"+
-    grp.filter(t=>!t.you).map(t=>t.name).join("</b>, <b>")+"</b>.";
-  $("#mdTitle").textContent="Fixtures"; $("#mdMatches").innerHTML=""; $("#mdScorers").innerHTML="";
-  $("#grpBtn").textContent="Play matchday 1";
-  renderTable();
-  show("groupScreen");
-}
-function renderTable(){
-  const grp=sortGrp(C.groups[C.uGroup]);
-  const thirdsLive=(C.camp.fmt==="wc24"||C.camp.fmt==="wc48");
-  let h='<table class="grp"><tr><th>Team</th><th>P</th><th>Pts</th><th>GD</th><th>GF</th></tr>';
-  grp.forEach((t,i)=>{
-    const cls=(t.you?"you ":"")+(C.md===3?(i<2?"q":(i===2&&thirdsLive?"q3":"")):"");
-    h+='<tr class="'+cls+'"><td>'+t.name+'</td><td>'+C.md+'</td><td>'+t.pts+'</td><td>'+(t.gd>0?"+":"")+t.gd+'</td><td>'+t.gf+'</td></tr>';
-  });
-  $("#grpTable").innerHTML=h+"</table>";
-}
-$("#grpBtn").addEventListener("click",()=>{ C.grpDone? startKO() : playMatchday(); });
-function playMatchday(){
-  const md=C.md, W=C.camp.pts;
-  let html="";
-  C.groups.forEach((g,gi)=>{
-    GRP_SCHED[md].forEach(pair=>{
-      const A=g[pair[0]],B=g[pair[1]];
-      const [a,b]=playMatch(A.rtg,B.rtg);
-      A.pts+=a>b?W:(a===b?1:0); B.pts+=b>a?W:(a===b?1:0);
-      A.gd+=a-b;B.gd+=b-a;A.gf+=a;B.gf+=b;
-      if(gi===C.uGroup){
-        const isU=A.you||B.you;
-        if(isU){ const ug=A.you?a:b, og=A.you?b:a; rec(ug,og); addGoals(ug); }
-        html+='<div class="match'+(isU?" user":"")+'"><span class="t home'+(A.you?" you":"")+'">'+A.name+
-          '</span><span class="score">'+a+' – '+b+'</span><span class="t'+(B.you?" you":"")+'">'+B.name+'</span></div>';
-      }
-    });
-  });
-  C.md++;
-  $("#mdTitle").textContent="Matchday "+C.md;
-  $("#mdMatches").innerHTML=html;
-  $("#mdScorers").innerHTML=topScorerLine();
-  renderTable();
-  if(C.md<3){ $("#grpBtn").textContent="Play matchday "+(C.md+1); return; }
-  const sorted=sortGrp(C.groups[C.uGroup]);
-  const pos=sorted.findIndex(t=>t.you)+1;
-  const thirds=(C.camp.fmt==="wc24"||C.camp.fmt==="wc48");
-  let through=pos<=2, asThird=false;
-  if(!through&&pos===3&&thirds){
-    const all=C.groups.map(g=>sortGrp(g)[2]).sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf);
-    asThird=all.slice(0,C.camp.fmt==="wc24"?4:8).some(t=>t.you);
-    through=asThird;
-  }
-  if(through){
-    $("#grpBtn").textContent=asThird?"Through as a best third →":"Into the knockouts →";
-    C.grpDone=true;
-  }else{
-    finishGame(false,"Out in the group stage — finished "+["","1st","2nd","3rd","4th"][pos]+" in Group "+String.fromCharCode(65+C.uGroup));
-  }
-}
-function topScorerLine(){
-  const e=Object.entries(C.scorers).sort((a,b)=>b[1]-a[1]).slice(0,3);
-  return e.length? "Your scorers so far: "+e.map(x=>"<b>"+x[0]+"</b> "+x[1]).join(" · ") : "";
-}
-function q(gi,pos){ return sortGrp(C.groups[gi])[pos]; }
-function bestThirds(n){
-  return C.groups.map((g,i)=>q(i,2)).sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf).slice(0,n);
-}
-function startKO(){
-  let pairs=[],names=[];
-  if(C.camp.fmt==="wc16"){
-    pairs=[[q(0,0),q(1,1)],[q(2,0),q(3,1)],[q(1,0),q(0,1)],[q(3,0),q(2,1)]];
-    names=["Quarter-finals","Semi-finals","Final"];
-  }else if(C.camp.fmt==="wc24"){
-    const T=bestThirds(4);
-    pairs=[[q(0,0),T[0]],[q(2,0),q(3,1)],[q(4,0),q(1,1)],[q(1,0),T[1]],
-           [q(3,0),T[2]],[q(5,0),q(4,1)],[q(0,1),q(2,1)],[q(5,1),T[3]]];
-    names=["Round of 16","Quarter-finals","Semi-finals","Final"];
-  }else if(C.camp.fmt==="wc32"){
-    pairs=[[q(0,0),q(1,1)],[q(2,0),q(3,1)],[q(4,0),q(5,1)],[q(6,0),q(7,1)],
-           [q(1,0),q(0,1)],[q(3,0),q(2,1)],[q(5,0),q(4,1)],[q(7,0),q(6,1)]];
-    names=["Round of 16","Quarter-finals","Semi-finals","Final"];
-  }else{
-    const T=bestThirds(8);
-    pairs=[[q(0,0),T[0]],[q(1,0),T[1]],[q(2,0),T[2]],[q(3,0),T[3]],
-           [q(4,0),T[4]],[q(5,0),T[5]],[q(6,0),T[6]],[q(7,0),T[7]],
-           [q(8,0),q(0,1)],[q(9,0),q(1,1)],[q(10,0),q(2,1)],[q(11,0),q(3,1)],
-           [q(4,1),q(5,1)],[q(6,1),q(7,1)],[q(8,1),q(9,1)],[q(10,1),q(11,1)]];
-    names=["Round of 32","Round of 16","Quarter-finals","Semi-finals","Final"];
-  }
-  C.koRounds=[{name:names[0],pairs,results:[]}];
-  C.koNames=names; C.koIdx=0;
-  $("#koSub").textContent=C.camp.year+" · "+C.camp.host;
-  $("#koTitle").textContent=names[0];
-  $("#koMatch").innerHTML='<div class="note">Your tie: <b>'+userTie().map(t=>t.name).join("</b> v <b>")+'</b></div>';
-  $("#koScorers").innerHTML="";
-  $("#koBtn").textContent="Play the "+names[0].toLowerCase();
-  renderBracket();
-  show("koScreen");
-}
-function userTie(){
-  const r=C.koRounds[C.koIdx];
-  return r.pairs.find(p=>p[0].you||p[1].you)||r.pairs[0];
-}
-$("#koBtn").addEventListener("click",()=>{
-  const r=C.koRounds[C.koIdx];
-  let uHtml="",winners=[];
-  r.results=[];
-  r.pairs.forEach(p=>{
-    const m=playKO(p[0].rtg,p[1].rtg);
-    const wA=m.pens? m.pens[0]>m.pens[1] : m.a>m.b;
-    const W=wA?p[0]:p[1];
-    winners.push(W);
-    r.results.push({A:p[0],B:p[1],m,W});
-    if(p[0].you||p[1].you){
-      const youA=p[0].you, ug=youA?m.a:m.b, og=youA?m.b:m.a;
-      if(m.pens){ C.record.d++; C.perfect=false; C.record.gf+=ug; C.record.ga+=og; }
-      else rec(ug,og);
-      addGoals(ug);
-      C.uAlive=W.you;
-      uHtml='<div class="match user"><span class="t home'+(youA?" you":"")+'">'+p[0].name+
-        '</span><span class="score">'+m.a+' – '+m.b+(m.et?'<div class="tag">a.e.t.</div>':'')+
-        '</span><span class="t'+(youA?"":" you")+'">'+p[1].name+'</span></div>'+
-        (m.pens?'<div class="scorers">'+W.name+' win <b>'+Math.max(...m.pens)+'–'+Math.min(...m.pens)+'</b> on penalties</div>':'');
-    }
-  });
-  $("#koTitle").textContent=r.name+" — results";
-  $("#koMatch").innerHTML=uHtml;
-  $("#koScorers").innerHTML=topScorerLine();
-  renderBracket();
-  if(!C.uAlive){ finishGame(false,"Knocked out in the "+r.name.toLowerCase()); return; }
-  if(winners.length===1){ finishGame(true,""); return; }
-  const next={name:C.koNames[C.koIdx+1],pairs:[],results:[]};
-  for(let i=0;i<winners.length;i+=2) next.pairs.push([winners[i],winners[i+1]]);
-  C.koRounds.push(next); C.koIdx++;
-  $("#koBtn").textContent="Play the "+next.name.toLowerCase()+" — "+(userTie().map(t=>t.name).join(" v "));
+$("#asGenerate").addEventListener("click",()=>{
+  AS.oppXi=buildAllStars(AS.tier);
+  AS.oppStr=teamStrength(AS.oppXi.map(s=>s.player));
+  renderMatchup(); show("matchupScreen");
 });
-function renderBracket(){
-  let h="";
-  C.koRounds.forEach(r=>{
-    h+='<div class="round"><h4>'+r.name+'</h4>';
-    if(r.results.length){
-      r.results.forEach(x=>{
-        const isU=x.A.you||x.B.you;
-        h+='<div class="bm'+(isU?" user":"")+'">'+
-          '<div class="r '+(x.W===x.A?"w":"l")+'"><span>'+x.A.name+'</span><b>'+x.m.a+'</b></div>'+
-          '<div class="r '+(x.W===x.B?"w":"l")+'"><span>'+x.B.name+'</span><b>'+x.m.b+'</b></div>'+
-          (x.m.pens?'<div class="pens">'+x.W.name+' on pens '+Math.max(...x.m.pens)+'–'+Math.min(...x.m.pens)+'</div>':
-           x.m.et?'<div class="pens">a.e.t.</div>':'')+'</div>';
-      });
-    }else{
-      r.pairs.forEach(p=>{
-        const isU=p[0].you||p[1].you;
-        h+='<div class="bm'+(isU?" user":"")+'"><div class="r"><span>'+p[0].name+'</span></div>'+
-           '<div class="r"><span>'+p[1].name+'</span></div></div>';
-      });
-    }
-    h+='</div>';
+$("#asBackToSpin").addEventListener("click",()=>{ initSpin(); show("spinScreen"); });
+$("#asReroll").addEventListener("click",()=>{ renderTierPick(); show("tierScreen"); });
+
+function renderMatchup(){
+  $("#asYouName").textContent=TEAM.teamName||"Your XI";
+  $("#asYouStr").textContent=TEAM.strength;
+  $("#asOppStr").textContent=AS.oppStr;
+  $("#asPredYouWho").textContent=TEAM.teamName||"Your XI";
+  $("#asResYouName").textContent=TEAM.teamName||"Your XI";
+  const wrap=$("#asOppXi"); wrap.innerHTML="";
+  // show opposition in pitch order-ish: GK first looks odd; keep formation order but list nicely
+  AS.oppXi.forEach(s=>{
+    const el=document.createElement("div"); el.className="p";
+    el.innerHTML='<span class="lab">'+s.lab+'</span><span class="nm">'+s.player.n+'</span>'+
+      "<span class=\"era\">'"+s.player.e.slice(2)+'</span><span class="rt">'+s.player.r+'</span>';
+    wrap.appendChild(el);
   });
-  $("#bracket").innerHTML=h;
+  AS.pred={you:1,opp:1}; $("#asPredYou").textContent=1; $("#asPredOpp").textContent=1;
+  const gap=TEAM.strength-AS.oppStr;
+  $("#asOdds").textContent = gap>=3?"You're the stronger side on paper — but legends bite."
+    : gap<=-3?"You're the underdog. A draw would be heroic."
+    : "Dead even on paper. This one's a coin-flip.";
 }
-function finishGame(won,whereOut){
-  const box=$("#endingBox"), R=C.record;
-  const top=Object.entries(C.scorers).sort((a,b)=>b[1]-a[1])[0];
-  const recStr=R.w+"W – "+R.d+"D – "+R.l+"L · "+R.gf+" scored, "+R.ga+" conceded";
-  let endLabel;
-  if(won&&C.perfect){
-    box.className="ending plat show"; $("#endIcon").textContent="🏆";
-    $("#endTitle").textContent="Perfect Run";
-    $("#endSub").innerHTML="<b>"+TEAM.teamName+"</b> won the "+C.camp.year+" World Cup — <b>every match, inside 90 or 120 minutes</b>. The rarest air in football.";
-    endLabel="PERFECT RUN 🏆 "+C.camp.year;
-  }else if(won){
-    box.className="ending gold show"; $("#endIcon").textContent="🏆";
-    $("#endTitle").textContent="You lifted it";
-    $("#endSub").innerHTML="<b>"+TEAM.teamName+"</b> are champions of the "+C.camp.year+" World Cup"+
-      (C.unbeaten?" — and never lost a match along the way.":".");
-    endLabel="LIFTED IT 🏆 "+C.camp.year;
-  }else{
-    box.className="ending out show"; $("#endIcon").textContent="💔";
-    $("#endTitle").textContent="So close";
-    $("#endSub").innerHTML="<b>"+TEAM.teamName+"</b> — "+whereOut+", "+C.camp.year+". Run it back.";
-    endLabel="OUT — "+whereOut+" · "+C.camp.year;
-  }
-  $("#awards").innerHTML=
-    '<div class="award"><div class="a-lab">Record</div><div class="a-val">'+recStr+'</div></div>'+
-    '<div class="award"><div class="a-lab">Golden Boot</div><div class="a-val">'+(top?top[0]:"—")+'</div>'+
-      '<div class="a-sub">'+(top?top[1]+" goal"+(top[1]>1?"s":""):"")+'</div></div>'+
-    '<div class="award"><div class="a-lab">Team strength</div><div class="a-val">'+TEAM.strength+'/100</div></div>'+
-    '<div class="award"><div class="a-lab">Campaign</div><div class="a-val">'+C.camp.year+'</div>'+
-      '<div class="a-sub">'+C.camp.host+' · replaced '+C.replaced+'</div></div>';
-  $("#shareBtn").onclick=()=>{
-    const txt="LIFT IT — "+endLabel+"\n"+TEAM.teamName+" ("+TEAM.formation+", "+TEAM.strength+"/100)\n"+
-      recStr+(top?"\nGolden Boot: "+top[0]+" ("+top[1]+")":"")+"\nCan you go unbeaten?";
-    if(navigator.clipboard&&navigator.clipboard.writeText)
-      navigator.clipboard.writeText(txt).then(()=>toast("Result copied — go and brag. 📋"),()=>toast("Copy failed."));
-    else toast("Copy failed.");
-  };
-  const asBtn=$("#toAllStarBtn");
-  if(asBtn) asBtn.onclick=()=>{
-    try{
-      const payload={teamName:TEAM.teamName,formation:TEAM.formation,strength:TEAM.strength,
-        xi:TEAM.xi.map(p=>({slot:p.slot,lab:p.lab,group:p.group,nation:p.nation,name:p.name,rtg:p.rtg}))};
-      const b64=btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
-      location.href="allstar.html#xi="+encodeURIComponent(b64);
-    }catch(e){ location.href="allstar.html"; }
-  };
-  show("endScreen");
+
+$$(".as-step button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    const s=b.dataset.s, d=parseInt(b.dataset.d,10);
+    AS.pred[s]=Math.max(0,Math.min(9,AS.pred[s]+d));
+    $("#asPred"+(s==="you"?"You":"Opp")).textContent=AS.pred[s];
+  });
+});
+
+/* match engine — same Poisson feel as the campaign */
+function poisson(l){let L=Math.exp(-l),k=0,p=1;do{k++;p*=Math.random();}while(p>L);return k-1;}
+function lambdas(ra,rb){const base=1.30,d=ra-rb;return [Math.min(Math.max(base*Math.exp(d/14),.15),4.6),Math.min(Math.max(base*Math.exp(-d/14),.15),4.6)];}
+function pickScorer(list){ // list of {lab,g,name,rtg}
+  const pool=list.map(s=>({n:s.name,w:s.lab==="GK"?.02:Math.max(s.rtg-68,3)*(["ST","RW","LW","AM"].includes(s.lab)?3:["CM","DM"].includes(s.lab)?1.4:.4)}));
+  const tot=pool.reduce((a,p)=>a+p.w,0);let r=Math.random()*tot;
+  for(const p of pool){r-=p.w;if(r<=0)return p.n;}return pool[0].n;
 }
-$("#sameXiBtn").addEventListener("click",()=>{ initCampPick(); show("campPickScreen"); });
-$("#homeLink").addEventListener("click",()=>{ if(confirm("Back to the start? Your run will be lost."))location.reload(); });
+
+$("#asKickoff").addEventListener("click",()=>{
+  const yourList=TEAM.xi.map(p=>({lab:p.lab,g:p.group,name:p.name,rtg:p.rtg}));
+  const oppList=AS.oppXi.map(s=>({lab:s.lab,g:s.g,name:s.player.n,rtg:s.player.r}));
+  const [la,lb]=lambdas(TEAM.strength,AS.oppStr);
+  const h=poisson(la),a=poisson(lb);
+  const sH={},sA={};
+  for(let i=0;i<h;i++){const n=pickScorer(yourList);sH[n]=(sH[n]||0)+1;}
+  for(let i=0;i<a;i++){const n=pickScorer(oppList);sA[n]=(sA[n]||0)+1;}
+  AS.result={h,a,sH,sA};
+  renderResult(); show("resultScreen");
+});
+
+function gradeOf(pH,pA,rH,rA){
+  if(pH===rH&&pA===rA)return"perfect";
+  const pr=Math.sign(pH-pA),rr=Math.sign(rH-rA);
+  if(pr!==rr)return"miss";
+  if((pH-pA)===(rH-rA))return"gd";
+  return"result";
+}
+const GRADE_COPY={
+  perfect:{t:"Perfect call!",l:"Exact scoreline. The rarest hit in the game. 🎯"},
+  gd:{t:"So close!",l:"Right result and goal difference — off only on the exact score."},
+  result:{t:"Called it",l:"You got the result right. Solid read."},
+  miss:{t:"Wrong this time",l:"The legends had other ideas. Run it back."}
+};
+function lastName(n){return n.split(" ").slice(-1)[0];}
+function renderResult(){
+  const {h,a,sH,sA}=AS.result;
+  $("#asScH").textContent=h; $("#asScA").textContent=a;
+  const line=o=>Object.entries(o).sort((x,y)=>y[1]-x[1]).map(([n,c])=>"<b>"+lastName(n)+"</b>"+(c>1?" "+c:"")).join(", ");
+  let sc="";
+  if(h)sc+=(TEAM.teamName||"Your XI")+": "+line(sH);
+  if(a)sc+=(sc?"<br>":"")+"All-Stars: "+line(sA);
+  $("#asScorers").innerHTML=sc||"A goalless stalemate.";
+  const g=gradeOf(AS.pred.you,AS.pred.opp,h,a);
+  const box=$("#asGrade"); box.className="as-grade show "+g;
+  $("#asGradeTier").textContent=GRADE_COPY[g].t;
+  $("#asGradeLine").innerHTML="You predicted <b>"+AS.pred.you+"–"+AS.pred.opp+"</b>. "+GRADE_COPY[g].l;
+  const res=h>a?"win":h<a?"loss":"draw";
+  $("#asResTitle").textContent=res==="win"?"You beat the All-Stars!":res==="draw"?"A famous draw":"Beaten by the legends";
+  AS.lastGrade=g; AS.lastRes={h,a};
+}
+$("#asAgain").addEventListener("click",()=>{ renderTierPick(); show("tierScreen"); });
+$("#asShare").addEventListener("click",()=>{
+  const {h,a}=AS.lastRes,g=AS.lastGrade;
+  const tierTxt={perfect:"PERFECT CALL 🎯",gd:"right result + GD",result:"called the result",miss:"missed it"}[g];
+  const star=AS.oppXi.reduce((b,s)=>s.player.r>b.player.r?s:b,AS.oppXi[0]).player.n;
+  const txt="LIFT IT — All-Star Final ("+TIERS[AS.tier].name+")\n"+(TEAM.teamName||"My XI")+" "+h+"–"+a+" All-Stars\nPredicted "+AS.pred.you+"–"+AS.pred.opp+" ("+tierTxt+")\nFaced legends incl. "+star+"\nCan you call it?";
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(()=>toast("Result copied 📋"),()=>toast("Copy failed."));
+  else toast("Copy failed.");
+});
+
+/* ============ URL HAND-OFF from main game ============
+   Main game ending links to:  allstar.html#xi=<base64 JSON of TEAM>
+   We decode, set TEAM, skip the spin, and drop the player at the tier screen. */
+(function(){
+  try{
+    const hash=location.hash||"";
+    const m=hash.match(/xi=([^&]+)/);
+    if(!m) return;
+    const json=decodeURIComponent(escape(atob(decodeURIComponent(m[1]))));
+    const data=JSON.parse(json);
+    if(data&&data.xi&&data.xi.length===11){
+      SETUP.formation=data.formation||SETUP.formation;
+      TEAM={ teamName:data.teamName||"Your XI", formation:data.formation||"4-3-3",
+             strength:data.strength||teamStrength(data.xi.map(p=>({r:p.rtg}))),
+             xi:data.xi };
+      // jump straight to tier select
+      renderTierPick(); show("tierScreen");
+      toast("XI carried over from your spin ⚡");
+    }
+  }catch(e){ /* malformed handoff — ignore, start fresh */ }
 })();
 </script>
 </body>
