@@ -208,7 +208,8 @@ footer{margin-top:54px;text-align:center;color:var(--muted);font-size:12.5px;lin
 .t85{background:#3f4d68}.t80{background:#2c3548}.t75{background:#222a3a;color:#aeb6c4}
 .rtg.hidden-rtg{background:#1b2230;color:var(--muted);font-size:20px}
 .p-info .p-nm{font-weight:700;font-size:15px}
-.p-info .p-note{font-size:12px;color:var(--muted);line-height:1.4;margin-top:1px}
+.p-info .p-nm .p-club-tag{font-weight:700;font-size:11px;color:var(--muted)}
+  .p-info .p-note{font-size:12px;color:var(--muted);line-height:1.4;margin-top:1px}
 .badges{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:120px}
 .badge{font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:4px 7px;border-radius:6px;background:#252e41;color:#c8cfda}
 .badge.primary{background:var(--blue);color:#fff}
@@ -559,7 +560,201 @@ const LIFTIT_1966={tournament:"1966",host:"England",squads:[
   {name:"Eduard Malofeyev",pos:"ST",alt:["AM"],rtg:82,note:"Two goals in the groups."},
   {name:"Valery Porkujan",pos:"LW",alt:["ST"],rtg:81,note:"Surprise pick with four tournament goals."}]}
 ]};
-const LIFTIT_PACKS=[LIFTIT_1966];
+const LIFTIT_2026={tournament:"2026",host:"USA · Mexico · Canada",squads:[
+ {nation:"Spain",code:"ESP",finish:"Euro 2024 champions",players:[
+  {name:"Unai Simón",pos:"GK",alt:[],rtg:85,club:"Athletic Club",note:"Long-established No.1; commanding and brave off his line."},
+  {name:"Pedro Porro",pos:"RB",alt:["RW"],rtg:83,club:"Tottenham",note:"Attacking right-back with a fierce delivery."},
+  {name:"Pau Cubarsí",pos:"CB",alt:[],rtg:85,club:"Barcelona",note:"18-year-old ball-playing prodigy; reads the game like a veteran."},
+  {name:"Aymeric Laporte",pos:"CB",alt:[],rtg:84,club:"Athletic Club",note:"Left-footed organiser of the back line."},
+  {name:"Marc Cucurella",pos:"LB",alt:[],rtg:84,club:"Chelsea",note:"Relentless overlapping energy; a Euro 2024 standout."},
+  {name:"Rodri",pos:"DM",alt:["CM"],rtg:91,club:"Man City",note:"The 2024 Ballon d'Or winner; the metronome the whole side is built around."},
+  {name:"Pedri",pos:"CM",alt:["AM"],rtg:90,club:"Barcelona",note:"The most complete midfielder of his generation — Spain's conductor."},
+  {name:"Fabián Ruiz",pos:"CM",alt:["AM"],rtg:85,club:"PSG",note:"Treble-winning left-footer who glides through midfield."},
+  {name:"Lamine Yamal",pos:"RW",alt:["AM"],rtg:92,club:"Barcelona",note:"At 18, already one of the best players on earth. The jewel of the tournament."},
+  {name:"Nico Williams",pos:"LW",alt:[],rtg:86,club:"Athletic Club",note:"Searing pace and end product down the left."},
+  {name:"Mikel Oyarzabal",pos:"ST",alt:["LW"],rtg:84,club:"Real Sociedad",note:"Scored the Euro 2024-winning goal; clever, clinical."}]},
+ {nation:"France",code:"FRA",finish:"2022 runners-up",players:[
+  {name:"Mike Maignan",pos:"GK",alt:[],rtg:87,club:"AC Milan",note:"Elite shot-stopper and sweeper-keeper; France's clear No.1."},
+  {name:"Jules Koundé",pos:"RB",alt:["CB"],rtg:85,club:"Barcelona",note:"Quick, technically secure, equally good inside or wide."},
+  {name:"Ibrahima Konaté",pos:"CB",alt:[],rtg:86,club:"Liverpool",note:"Powerful, fast, dominant in duels."},
+  {name:"William Saliba",pos:"CB",alt:[],rtg:87,club:"Arsenal",note:"The coolest centre-back in Europe; barely breaks stride."},
+  {name:"Theo Hernández",pos:"LB",alt:[],rtg:85,club:"Al Hilal",note:"Marauding left-back who plays like an extra winger."},
+  {name:"N'Golo Kanté",pos:"DM",alt:["CM"],rtg:85,club:"Al-Ittihad",note:"35 now, but still covers every blade of grass. The 2018 heartbeat returns."},
+  {name:"Aurélien Tchouaméni",pos:"CM",alt:["DM"],rtg:86,club:"Real Madrid",note:"Composed, powerful controller at the base of midfield."},
+  {name:"Michael Olise",pos:"AM",alt:["RW"],rtg:87,club:"Bayern Munich",note:"Sublime creator in the form of his life at Bayern."},
+  {name:"Ousmane Dembélé",pos:"RW",alt:["ST","LW"],rtg:90,club:"PSG",note:"Reigning Ballon d'Or winner after a devastating treble season."},
+  {name:"Kylian Mbappé",pos:"ST",alt:["LW"],rtg:93,club:"Real Madrid",note:"Captain and one of the two best players alive. The face of the tournament."},
+  {name:"Marcus Thuram",pos:"LW",alt:["ST"],rtg:84,club:"Inter",note:"Powerful, mobile forward who stretches any defence."}]},
+ {nation:"Argentina",code:"ARG",finish:"Holders",players:[
+  {name:"Emiliano Martínez",pos:"GK",alt:[],rtg:88,club:"Aston Villa",note:"The 2022 Golden Glove and shootout king; a giant in the big moments."},
+  {name:"Nahuel Molina",pos:"RB",alt:[],rtg:82,club:"Atlético Madrid",note:"Energetic, overlapping right-back from the winning side."},
+  {name:"Cuti Romero",pos:"CB",alt:[],rtg:88,club:"Tottenham",note:"Aggressive, front-foot defender — one of the world's best."},
+  {name:"Lisandro Martínez",pos:"CB",alt:["LB"],rtg:84,club:"Man Utd",note:"Ferocious left-footed competitor."},
+  {name:"Nicolás Tagliafico",pos:"LB",alt:[],rtg:82,club:"Lyon",note:"Reliable, tenacious tournament full-back."},
+  {name:"Rodrigo De Paul",pos:"CM",alt:["DM"],rtg:84,club:"Inter Miami",note:"Messi's tireless on-pitch lieutenant."},
+  {name:"Enzo Fernández",pos:"CM",alt:["AM"],rtg:86,club:"Chelsea",note:"Deep-lying passer who dictates tempo."},
+  {name:"Alexis Mac Allister",pos:"CM",alt:["AM"],rtg:87,club:"Liverpool",note:"Intelligent, two-footed, a Premier League title-winner."},
+  {name:"Lionel Messi",pos:"AM",alt:["RW","ST"],rtg:88,club:"Inter Miami",note:"38 and in his sixth and final World Cup. No longer a 90s number on form — but on his day, still the best there's ever been."},
+  {name:"Julián Álvarez",pos:"ST",alt:["AM"],rtg:87,club:"Atlético Madrid",note:"Relentless, clever, deadly — a modern complete forward."},
+  {name:"Lautaro Martínez",pos:"ST",alt:[],rtg:86,club:"Inter",note:"Ruthless penalty-box finisher and Argentina's main No.9."}]},
+ {nation:"England",code:"ENG",finish:"Euro 2024 runners-up",players:[
+  {name:"Jordan Pickford",pos:"GK",alt:[],rtg:84,club:"Everton",note:"Undisputed No.1; a proven shootout specialist."},
+  {name:"Reece James",pos:"RB",alt:["RW"],rtg:83,club:"Chelsea",note:"Powerful two-way full-back and dead-ball threat when fit."},
+  {name:"Marc Guéhi",pos:"CB",alt:[],rtg:84,club:"Man City",note:"Calm, quick, an emerging leader of the back line."},
+  {name:"John Stones",pos:"CB",alt:["DM"],rtg:84,club:"Man City",note:"Ball-playing centre-back who can step into midfield."},
+  {name:"Tino Livramento",pos:"LB",alt:["RB"],rtg:80,club:"Newcastle",note:"Quick, modern full-back comfortable on either flank."},
+  {name:"Declan Rice",pos:"DM",alt:["CM"],rtg:88,club:"Arsenal",note:"England's indispensable engine — destroyer and creator in one."},
+  {name:"Jude Bellingham",pos:"AM",alt:["CM"],rtg:88,club:"Real Madrid",note:"A big-game talisman with a knack for tournament moments."},
+  {name:"Elliot Anderson",pos:"CM",alt:["DM"],rtg:82,club:"Nottingham Forest",note:"The breakout box-to-box pick of Tuchel's new era."},
+  {name:"Bukayo Saka",pos:"RW",alt:[],rtg:87,club:"Arsenal",note:"England's most reliable creator and dribbler."},
+  {name:"Harry Kane",pos:"ST",alt:[],rtg:89,club:"Bayern Munich",note:"Captain and all-time top scorer, fresh off 36 goals in a Bundesliga title."},
+  {name:"Marcus Rashford",pos:"LW",alt:["ST"],rtg:83,club:"Barcelona",note:"Explosive off the left; rejuvenated at Barcelona."}]},
+ {nation:"Brazil",code:"BRA",finish:"Quarter-finalists (2022)",players:[
+  {name:"Alisson",pos:"GK",alt:[],rtg:88,club:"Liverpool",note:"One of the world's best keepers — calm, complete, commanding."},
+  {name:"Vanderson",pos:"RB",alt:[],rtg:80,club:"Monaco",note:"Quick, attacking right-back for the new generation."},
+  {name:"Marquinhos",pos:"CB",alt:[],rtg:86,club:"PSG",note:"Co-captain; elegant, intelligent, a Champions League winner."},
+  {name:"Gabriel Magalhães",pos:"CB",alt:[],rtg:86,club:"Arsenal",note:"Dominant, aggressive, brilliant in both boxes."},
+  {name:"Douglas Santos",pos:"LB",alt:[],rtg:79,club:"Zenit",note:"Steady, experienced left-back."},
+  {name:"Casemiro",pos:"DM",alt:[],rtg:83,club:"Man Utd",note:"Co-captain and shield; tournament-hardened protector."},
+  {name:"Bruno Guimarães",pos:"CM",alt:["DM"],rtg:86,club:"Newcastle",note:"All-action, press-resistant, the engine of the midfield."},
+  {name:"Lucas Paquetá",pos:"AM",alt:["CM"],rtg:83,club:"West Ham",note:"Creative link who carries the ball between the lines."},
+  {name:"Raphinha",pos:"RW",alt:["LW"],rtg:88,club:"Barcelona",note:"In the form of his life — top scorer in qualifying, devastating at Barça."},
+  {name:"Vinícius Júnior",pos:"LW",alt:["ST"],rtg:90,club:"Real Madrid",note:"The centrepiece of Ancelotti's project; a match-winner on either flank."},
+  {name:"Neymar",pos:"AM",alt:["LW","ST"],rtg:84,club:"Santos",note:"Brazil's all-time top scorer, back from injury for one last dance. Magic on his day; fitness the question."}]},
+ {nation:"Portugal",code:"POR",finish:"Nations League champions",players:[
+  {name:"Diogo Costa",pos:"GK",alt:[],rtg:84,club:"FC Porto",note:"Outstanding modern keeper; superb with his feet."},
+  {name:"João Cancelo",pos:"RB",alt:["LB"],rtg:83,club:"Barcelona",note:"Inventive, two-footed full-back who plays like a midfielder."},
+  {name:"Rúben Dias",pos:"CB",alt:[],rtg:87,club:"Man City",note:"One of the world's best centre-backs — a born leader and organiser."},
+  {name:"Gonçalo Inácio",pos:"CB",alt:[],rtg:83,club:"Sporting CP",note:"Composed left-footed defender on the rise."},
+  {name:"Nuno Mendes",pos:"LB",alt:[],rtg:87,club:"PSG",note:"Arguably the best left-back at the tournament — pace, power, a treble winner."},
+  {name:"Vitinha",pos:"CM",alt:["DM"],rtg:88,club:"PSG",note:"The metronome of PSG's treble; press-resistant and relentless."},
+  {name:"João Neves",pos:"CM",alt:["DM"],rtg:86,club:"PSG",note:"All-action 20-year-old with maturity beyond his years."},
+  {name:"Bruno Fernandes",pos:"AM",alt:["CM"],rtg:87,club:"Man Utd",note:"The engine and chief creator — goals, assists and set-pieces."},
+  {name:"Bernardo Silva",pos:"RW",alt:["AM","CM"],rtg:86,club:"Man City",note:"Elegant, tireless, endlessly versatile."},
+  {name:"Rafael Leão",pos:"LW",alt:["ST"],rtg:85,club:"AC Milan",note:"Explosive, direct and unplayable in full flow."},
+  {name:"Cristiano Ronaldo",pos:"ST",alt:[],rtg:83,club:"Al-Nassr",note:"41, captain, the all-time top scorer chasing the one prize left. A penalty-box predator and talisman — legend in the note, form in the number."}]},
+ {nation:"Germany",code:"GER",finish:"Euro 2024 quarter-finalists",players:[
+  {name:"Manuel Neuer",pos:"GK",alt:[],rtg:85,club:"Bayern Munich",note:"Came out of international retirement at 40 — still judged Germany's best keeper."},
+  {name:"Joshua Kimmich",pos:"RB",alt:["DM","CM"],rtg:87,club:"Bayern Munich",note:"Captain; elite quality whether at right-back or in midfield."},
+  {name:"Antonio Rüdiger",pos:"CB",alt:[],rtg:86,club:"Real Madrid",note:"Aggressive, fast, big-game defender."},
+  {name:"Jonathan Tah",pos:"CB",alt:[],rtg:84,club:"Bayern Munich",note:"Commanding, composed title-winning centre-back."},
+  {name:"David Raum",pos:"LB",alt:[],rtg:82,club:"RB Leipzig",note:"Energetic left-back with a fine delivery."},
+  {name:"Aleksandar Pavlović",pos:"DM",alt:["CM"],rtg:83,club:"Bayern Munich",note:"Composed young controller at the base."},
+  {name:"Florian Wirtz",pos:"AM",alt:["CM","LW"],rtg:88,club:"Liverpool",note:"Rated the best attacking midfielder in the world; the creative hub."},
+  {name:"Jamal Musiala",pos:"AM",alt:["RW","LW"],rtg:88,club:"Bayern Munich",note:"Germany's most unpredictable talent — a dribbler who unlocks any defence."},
+  {name:"Leroy Sané",pos:"RW",alt:[],rtg:83,club:"Galatasaray",note:"Pace and a left foot that punishes from wide."},
+  {name:"Kai Havertz",pos:"ST",alt:["AM"],rtg:84,club:"Arsenal",note:"Germany's preferred No.9 — links play and finishes."},
+  {name:"Deniz Undav",pos:"ST",alt:[],rtg:82,club:"Stuttgart",note:"Top-scoring German in the Bundesliga; 'you cannot leave him at home.'"}]},
+ {nation:"Netherlands",code:"NED",finish:"2022 quarter-finalists",players:[
+  {name:"Bart Verbruggen",pos:"GK",alt:[],rtg:82,club:"Brighton",note:"Assured young keeper, comfortable with the ball at his feet."},
+  {name:"Denzel Dumfries",pos:"RB",alt:["RW"],rtg:84,club:"Inter",note:"Powerful wing-back; a goal and assist threat on the right."},
+  {name:"Virgil van Dijk",pos:"CB",alt:[],rtg:88,club:"Liverpool",note:"Captain; at 34 still among the very best centre-backs alive."},
+  {name:"Micky van de Ven",pos:"CB",alt:[],rtg:85,club:"Tottenham",note:"Blistering recovery pace makes a high line possible."},
+  {name:"Nathan Aké",pos:"LB",alt:["CB"],rtg:83,club:"Man City",note:"Versatile, reliable, a serial winner."},
+  {name:"Frenkie de Jong",pos:"CM",alt:["DM"],rtg:86,club:"Barcelona",note:"Glides past pressure; the side's tempo-setter."},
+  {name:"Tijjani Reijnders",pos:"CM",alt:["AM"],rtg:85,club:"Man City",note:"Box-to-box dynamo arriving in the best form of his career."},
+  {name:"Ryan Gravenberch",pos:"CM",alt:["DM"],rtg:85,club:"Liverpool",note:"Transformed into one of Europe's best all-round midfielders."},
+  {name:"Donyell Malen",pos:"RW",alt:["ST"],rtg:82,club:"AS Roma",note:"Direct runner; 14 goals in 18 Serie A games on arrival at Roma."},
+  {name:"Memphis Depay",pos:"ST",alt:["AM"],rtg:83,club:"Corinthians",note:"The Netherlands' all-time top scorer and focal point of the attack."},
+  {name:"Cody Gakpo",pos:"LW",alt:["ST"],rtg:85,club:"Liverpool",note:"Powerful, two-footed forward with a strong international record."}]},
+ {nation:"Belgium",code:"BEL",finish:"Euro 2024 last 16",players:[
+  {name:"Thibaut Courtois",pos:"GK",alt:[],rtg:88,club:"Real Madrid",note:"One of the world's best keepers — vast, calm, decisive."},
+  {name:"Timothy Castagne",pos:"RB",alt:["LB"],rtg:80,club:"Fulham",note:"Dependable, athletic two-way full-back."},
+  {name:"Zeno Debast",pos:"CB",alt:["DM"],rtg:80,club:"Sporting CP",note:"Composed young ball-player at the back."},
+  {name:"Koni De Winter",pos:"CB",alt:[],rtg:80,club:"AC Milan",note:"Aggressive, improving centre-back."},
+  {name:"Maxim De Cuyper",pos:"LB",alt:[],rtg:79,club:"Brighton",note:"Energetic, attacking left-back."},
+  {name:"Amadou Onana",pos:"DM",alt:["CM"],rtg:83,club:"Aston Villa",note:"Powerful, athletic shield in front of the back four."},
+  {name:"Youri Tielemans",pos:"CM",alt:["DM"],rtg:83,club:"Aston Villa",note:"Captain; reliable passer and dead-ball threat."},
+  {name:"Kevin De Bruyne",pos:"AM",alt:["CM"],rtg:86,club:"Napoli",note:"At 34 still the creative heartbeat — a pass nobody else sees. His last World Cup."},
+  {name:"Jérémy Doku",pos:"RW",alt:["LW"],rtg:85,club:"Man City",note:"In the form of his life; terrifying one-on-one pace and trickery."},
+  {name:"Leandro Trossard",pos:"LW",alt:["ST","AM"],rtg:83,club:"Arsenal",note:"Clever, two-footed, a reliable big-game finisher."},
+  {name:"Romelu Lukaku",pos:"ST",alt:[],rtg:84,club:"Napoli",note:"Belgium's all-time top scorer; still a powerful focal point."}]},
+ {nation:"Croatia",code:"CRO",finish:"2022 third place",players:[
+  {name:"Dominik Livaković",pos:"GK",alt:[],rtg:83,club:"Dinamo Zagreb",note:"The 2022 shootout hero; a proven tournament keeper."},
+  {name:"Josip Stanišić",pos:"RB",alt:["CB"],rtg:81,club:"Bayern Munich",note:"Versatile, dependable defender across the back line."},
+  {name:"Joško Gvardiol",pos:"CB",alt:["LB"],rtg:86,club:"Man City",note:"Quick, powerful, ball-carrying — one of the best young defenders around."},
+  {name:"Josip Šutalo",pos:"CB",alt:[],rtg:80,club:"Ajax",note:"Composed centre-back of the new generation."},
+  {name:"Borna Sosa",pos:"LB",alt:[],rtg:79,club:"Ajax",note:"Left-back with a dangerous delivery from wide."},
+  {name:"Mateo Kovačić",pos:"DM",alt:["CM"],rtg:85,club:"Man City",note:"Press-resistant, elegant, a serial Champions League winner."},
+  {name:"Luka Modrić",pos:"CM",alt:["AM"],rtg:84,club:"AC Milan",note:"40 and still conducting — captain at a record sixth World Cup. The 2018 Ballon d'Or magician, rated on what he still does today."},
+  {name:"Luka Sučić",pos:"CM",alt:["AM"],rtg:80,club:"Real Sociedad",note:"Technical young midfielder auditioning to inherit the engine room."},
+  {name:"Nikola Vlašić",pos:"RW",alt:["AM"],rtg:80,club:"Torino",note:"Industrious, two-footed attacking midfielder."},
+  {name:"Andrej Kramarić",pos:"ST",alt:["AM"],rtg:82,club:"Hoffenheim",note:"Clever, clinical — Croatia's top scorer in qualifying."},
+  {name:"Ivan Perišić",pos:"LW",alt:["LB"],rtg:82,club:"PSV",note:"Evergreen big-game performer; relentless down the left."}]},
+ {nation:"Morocco",code:"MAR",finish:"2022 fourth place · AFCON champions",players:[
+  {name:"Yassine Bounou",pos:"GK",alt:[],rtg:85,club:"Al Hilal",note:"'Bono' — the 2022 shootout hero; a big-game keeper."},
+  {name:"Achraf Hakimi",pos:"RB",alt:["RW"],rtg:88,club:"PSG",note:"Captain and rated the best right-back in the world — a treble winner with electric pace."},
+  {name:"Nayef Aguerd",pos:"CB",alt:[],rtg:82,club:"Marseille",note:"Composed, aerially strong leader of the defence."},
+  {name:"Chadi Riad",pos:"CB",alt:[],rtg:80,club:"Crystal Palace",note:"Promising young centre-back from the Premier League."},
+  {name:"Noussair Mazraoui",pos:"LB",alt:["RB"],rtg:83,club:"Man Utd",note:"Intelligent, two-footed full-back comfortable on either side."},
+  {name:"Sofyan Amrabat",pos:"DM",alt:["CM"],rtg:82,club:"Real Betis",note:"The midfield destroyer who anchored the 2022 run."},
+  {name:"Azzedine Ounahi",pos:"CM",alt:["AM"],rtg:81,club:"Girona",note:"Elegant, gliding midfielder who shone in Qatar."},
+  {name:"Bilal El Khannouss",pos:"AM",alt:["CM"],rtg:81,club:"Stuttgart",note:"Creative young playmaker on the rise."},
+  {name:"Brahim Díaz",pos:"RW",alt:["AM"],rtg:84,club:"Real Madrid",note:"The attacking fulcrum — AFCON top scorer and Morocco's spark."},
+  {name:"Ayoub El Kaabi",pos:"ST",alt:[],rtg:81,club:"Olympiacos",note:"Prolific penalty-box striker leading the line."},
+  {name:"Abde Ezzalzouli",pos:"LW",alt:[],rtg:81,club:"Real Betis",note:"Direct, exciting dribbler down the left."}]},
+ {nation:"USA",code:"USA",finish:"Co-hosts",players:[
+  {name:"Matt Freese",pos:"GK",alt:[],rtg:78,club:"New York City",note:"Gold Cup form made him the favourite for the No.1 shirt."},
+  {name:"Sergiño Dest",pos:"RB",alt:["RW"],rtg:80,club:"PSV",note:"Attack-minded full-back with European pedigree."},
+  {name:"Chris Richards",pos:"CB",alt:[],rtg:80,club:"Crystal Palace",note:"Athletic, improving Premier League centre-back."},
+  {name:"Tim Ream",pos:"CB",alt:[],rtg:78,club:"Charlotte",note:"Calm, experienced organiser of the back line."},
+  {name:"Antonee Robinson",pos:"LB",alt:[],rtg:82,club:"Fulham",note:"One of the Premier League's best attacking left-backs."},
+  {name:"Tyler Adams",pos:"DM",alt:["CM"],rtg:82,club:"Bournemouth",note:"Relentless ball-winner and the team's tactical anchor."},
+  {name:"Weston McKennie",pos:"CM",alt:["AM"],rtg:82,club:"Juventus",note:"Do-it-all box-to-box engine with goals in him."},
+  {name:"Gio Reyna",pos:"AM",alt:["RW"],rtg:79,club:"Mönchengladbach",note:"Mercurial creator — the team's most natural No.10 when sharp."},
+  {name:"Tim Weah",pos:"RW",alt:["RB"],rtg:79,club:"Juventus",note:"Quick, direct, tireless down the right."},
+  {name:"Christian Pulisic",pos:"LW",alt:["AM","ST"],rtg:85,club:"AC Milan",note:"Captain America — the squad's one genuine star and the hopes of a home World Cup."},
+  {name:"Folarin Balogun",pos:"ST",alt:[],rtg:80,club:"Monaco",note:"Mobile, technical No.9 leading the line."}]},
+ {nation:"Mexico",code:"MEX",finish:"Co-hosts",players:[
+  {name:"Raúl Rangel",pos:"GK",alt:[],rtg:78,club:"Chivas",note:"Expected to start ahead of the 40-year-old Ochoa; calm and assured."},
+  {name:"Jorge Sánchez",pos:"RB",alt:[],rtg:77,club:"Cruz Azul",note:"Energetic, attacking right-back."},
+  {name:"César Montes",pos:"CB",alt:[],rtg:80,club:"Lokomotiv Moscow",note:"Aggressive, aerially dominant — part of the 'Triangle of Trust.'"},
+  {name:"Johan Vásquez",pos:"CB",alt:[],rtg:80,club:"Genoa",note:"Left-footed, combative Serie A defender."},
+  {name:"Jesús Gallardo",pos:"LB",alt:[],rtg:77,club:"Toluca",note:"Experienced, durable left-back."},
+  {name:"Edson Álvarez",pos:"DM",alt:["CB"],rtg:82,club:"Fenerbahçe",note:"Captain and duel-winning machine who shields the back four."},
+  {name:"Luis Chávez",pos:"CM",alt:[],rtg:79,club:"Dynamo Moscow",note:"Long-range threat and a fine dead-ball striker."},
+  {name:"Gilberto Mora",pos:"AM",alt:["CM"],rtg:79,club:"Tijuana",note:"The 17-year-old wonderkid — Mexico's potential difference-maker."},
+  {name:"Orbelín Pineda",pos:"AM",alt:["LW"],rtg:80,club:"AEK Athens",note:"Creative, busy link between midfield and attack."},
+  {name:"Santiago Giménez",pos:"ST",alt:[],rtg:81,club:"AC Milan",note:"A genuine penalty-box striker with pace and a clinical touch."},
+  {name:"Raúl Jiménez",pos:"ST",alt:["AM"],rtg:81,club:"Fulham",note:"The talisman — leads the line at a home World Cup after a strong Fulham season."}]},
+ {nation:"Japan",code:"JPN",finish:"2022 round of 16",players:[
+  {name:"Zion Suzuki",pos:"GK",alt:[],rtg:80,club:"Parma",note:"Tall, agile, commanding modern keeper."},
+  {name:"Takehiro Tomiyasu",pos:"CB",alt:["RB"],rtg:81,club:"Arsenal",note:"Versatile, intelligent defender back from injury hell."},
+  {name:"Ko Itakura",pos:"CB",alt:[],rtg:81,club:"Ajax",note:"Reads danger early and steps out with the ball; now captain."},
+  {name:"Hiroki Itō",pos:"CB",alt:["LB"],rtg:80,club:"Bayern Munich",note:"Calm left-sided centre-back in the back three."},
+  {name:"Yukinari Sugawara",pos:"RB",alt:["RW"],rtg:78,club:"Southampton",note:"Energetic wing-back who gets up and down the right."},
+  {name:"Daichi Kamada",pos:"CM",alt:["AM"],rtg:82,club:"Crystal Palace",note:"Creative, two-footed midfielder; goals and assists."},
+  {name:"Ao Tanaka",pos:"CM",alt:["DM"],rtg:80,club:"Leeds United",note:"Tidy controller — the man who beat Spain in Qatar."},
+  {name:"Junya Itō",pos:"RW",alt:[],rtg:80,club:"Genk",note:"Searing pace and crossing from the right."},
+  {name:"Takefusa Kubo",pos:"AM",alt:["RW"],rtg:84,club:"Real Sociedad",note:"'Take' — the star in Mitoma's absence; one of La Liga's most exciting attackers."},
+  {name:"Ritsu Doan",pos:"LW",alt:["RW"],rtg:82,club:"Eintracht Frankfurt",note:"Direct, clutch — scored against Germany and Spain in 2022."},
+  {name:"Ayase Ueda",pos:"ST",alt:[],rtg:81,club:"Feyenoord",note:"Eredivisie top scorer; mobile, aerial, leads the line."}]},
+ {nation:"Senegal",code:"SEN",finish:"AFCON 2025 finalists",players:[
+  {name:"Édouard Mendy",pos:"GK",alt:[],rtg:83,club:"Al-Ahli",note:"Champions League and AFCON-winning keeper; big and commanding."},
+  {name:"Krépin Diatta",pos:"RB",alt:["RW"],rtg:80,club:"Monaco",note:"Athletic, versatile wing-back."},
+  {name:"Kalidou Koulibaly",pos:"CB",alt:[],rtg:84,club:"Al-Hilal",note:"Captain; a calm, vastly experienced defensive leader."},
+  {name:"Moussa Niakhaté",pos:"CB",alt:[],rtg:80,club:"Lyon",note:"Powerful, aerially strong centre-back."},
+  {name:"Ismaïl Jakobs",pos:"LB",alt:[],rtg:79,club:"Galatasaray",note:"Quick, attacking left-back."},
+  {name:"Idrissa Gana Gueye",pos:"DM",alt:["CM"],rtg:83,club:"Everton",note:"Senegal's most-capped player — a tireless, ball-winning shield."},
+  {name:"Pape Matar Sarr",pos:"CM",alt:["AM"],rtg:82,club:"Tottenham",note:"Box-to-box engine; scored the winner that sealed qualification."},
+  {name:"Habib Diarra",pos:"CM",alt:["AM"],rtg:80,club:"Sunderland",note:"Dynamic, press-resistant young midfielder."},
+  {name:"Ismaïla Sarr",pos:"RW",alt:["ST"],rtg:82,club:"Crystal Palace",note:"Pace and end product, in fine Premier League form."},
+  {name:"Sadio Mané",pos:"LW",alt:["ST"],rtg:84,club:"Al-Nassr",note:"34, all-time top scorer, AFCON 2025 player of the tournament. His last World Cup — the stardust for one final run."},
+  {name:"Nicolas Jackson",pos:"ST",alt:[],rtg:81,club:"Bayern Munich",note:"Quick, mobile No.9 who stretches defences."}]},
+ {nation:"Norway",code:"NOR",finish:"First World Cup since 1998",players:[
+  {name:"Ørjan Nyland",pos:"GK",alt:[],rtg:77,club:"Sevilla",note:"Experienced, dependable keeper."},
+  {name:"Julian Ryerson",pos:"RB",alt:["LB"],rtg:80,club:"Borussia Dortmund",note:"Tireless, two-footed full-back and assist provider."},
+  {name:"Kristoffer Ajer",pos:"CB",alt:[],rtg:79,club:"Brentford",note:"Tall, ball-playing centre-back who can step out."},
+  {name:"Leo Østigård",pos:"CB",alt:[],rtg:78,club:"Genoa",note:"Aggressive, committed defender."},
+  {name:"David Møller Wolfe",pos:"LB",alt:[],rtg:76,club:"Wolves",note:"Energetic young left-back."},
+  {name:"Sander Berge",pos:"DM",alt:["CM"],rtg:80,club:"Fulham",note:"Tall, technical Premier League midfield anchor."},
+  {name:"Patrick Berg",pos:"CM",alt:["DM"],rtg:78,club:"Bodø/Glimt",note:"Industrious metronome in the centre."},
+  {name:"Martin Ødegaard",pos:"AM",alt:["CM"],rtg:88,club:"Arsenal",note:"Captain; a Premier League-winning playmaker who'd start for most sides at the tournament."},
+  {name:"Antonio Nusa",pos:"RW",alt:["LW"],rtg:80,club:"RB Leipzig",note:"Direct, exciting young winger."},
+  {name:"Erling Haaland",pos:"ST",alt:[],rtg:91,club:"Man City",note:"One of the most lethal strikers on earth — 16 goals in qualifying alone. The reason Norway are dark horses."},
+  {name:"Oscar Bobb",pos:"LW",alt:["RW"],rtg:79,club:"Man City",note:"Tricky, inventive forward of the next generation."}]}
+]};
+const LIFTIT_PACKS=[LIFTIT_1966, LIFTIT_2026];
 
 /* All eight editions: campaign metadata + tournament fields (team-level ratings) */
 const CAMPAIGNS=[
@@ -783,7 +978,7 @@ function renderSquad(allDead){
     row.className="player"+(dead?" dead":""); row.disabled=dead;
     row.innerHTML=(SETUP.showRatings?'<div class="rtg '+tierClass(p.rtg)+'">'+p.rtg+'</div>'
       :'<div class="rtg hidden-rtg">?</div>')+
-      '<div class="p-info"><div class="p-nm">'+p.name+(SPIN.picked.has(key)?" ✓":"")+'</div>'+
+      '<div class="p-info"><div class="p-nm">'+p.name+(p.club?' <span class="p-club-tag">· '+p.club+'</span>':'')+(SPIN.picked.has(key)?" ✓":"")+'</div>'+
       '<div class="p-note">'+p.note+'</div></div>'+
       '<div class="badges"><span class="badge '+(p.pos==="GK"?"gk":"primary")+'">'+p.pos+'</span>'+
       (p.alt||[]).map(a=>'<span class="badge">'+a+'</span>').join("")+'</div>';
